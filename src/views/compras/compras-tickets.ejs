@@ -1,0 +1,98 @@
+<%- include('../header') -%>
+
+<div class="container">
+  <div class="justify-content mt-6 text-center">
+    <div class="text-center mt-6">
+      <p class="display-6"><strong>Realiza tu compra </strong>!</p>
+    </div>
+    <hr />
+
+    <br /><br />
+    <div class="input-group mb-3">
+      <p class="lead">
+        <strong>Empecemos</strong>
+      </p>
+    </div>
+
+    <form action="/api/compras-tickets" method="post">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon2">Tarjeta crédito</span>
+
+        <input
+          type="number"
+          class="form-control"
+          placeholder="Ingresa tu tarjeta"
+          aria-label="creditCard"
+          aria-describedby="basic-addon2"
+          id="creditCard"
+          name="creditCard"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Fecha vto.</span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Ingresa fecha de vencimiento"
+          aria-label="expiredDate"
+          id="expireDate"
+          name="expireDate"
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Precio</span>
+        <input
+          type="number"
+          class="form-control"
+          aria-label="price"
+          id="price"
+          name="price"
+        />
+        <span class="input-group-text">.00</span>
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">Cantidad</span>
+        <input
+          type="number"
+          class="form-control"
+          aria-label="quantity"
+          id="quantity"
+          name="quantity"
+        />
+        <span class="input-group-text">en Total</span>
+      </div>
+
+      <div class="input-group mb-3">
+        <input type="submit" value="Comprar" class="btn btn-success" />
+      </div>
+    </form>
+    
+    <% if(message.error.length > 0) { %> 
+      <div class="alert alert-danger" role="alert">
+        <p class="lead text-center"> Por favor ingresa todos los datos! </p>
+      </div>
+    <% } %>
+
+    <% if(message.json.length > 0) { %>
+     <pre>
+       <%= message.json %>
+     </pre>
+    <% } %>
+  </div>
+</div>
+
+<%- include('../footer') -%>

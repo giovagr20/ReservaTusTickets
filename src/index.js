@@ -4,6 +4,7 @@ const app = express();
 const path = require('path');
 const DB =  require('./database/database_connection');
 const PORT = require('./database/utils/properties').PORT;
+const _comprasRoutes = require('./routes/compras/compras.routes');
 DB();
 
 //Settings
@@ -14,10 +15,11 @@ app.set('view engine', 'ejs');
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
+app.use('/', _comprasRoutes);
 
 //TODO: Implementar cada uno los middleware de sus routes aquí
 
 //RUN Server
 app.listen(app.get('port'), () => {
-    console.log(`Server in runnig on port ${app.get('port')}`);
+    console.log(`Server in running on port ${app.get('port')}`);
 })
