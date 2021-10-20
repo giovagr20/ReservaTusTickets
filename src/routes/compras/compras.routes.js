@@ -1,6 +1,8 @@
 const express = require("express");
 const routes = express.Router();
 const _compraSchema = require("./compras.model");
+const _reservaSchema = require('../reservas/reservas.model');
+let idSchema = undefined;
 
 routes.get("/", (req, res) => {
   res.render("index");
@@ -8,16 +10,23 @@ routes.get("/", (req, res) => {
 
 routes.get("/compras-tickets", (req, res) => {
   let message = {
+    id: idSchema,
     error: '',
     json: ''
   };
   res.render("compras/compras-tickets", { message });
 });
 
-routes.post("/api/compras-tickets", async (req, res) => {
-  const { creditCard, expireDate, price, quantity } = req.body;
+routes.get('/compras-tickets/:id', (req, res) => {
+  idSchema = _reservaSchema.findById(req.params.id);
+  res.render('compras/compras-tickets', {idSchema})
+});
 
+routes.post("/api/compras-tickets", async (req, res) => {
+
+  const { creditCard, expireDate, price, quantity } = req.body;
   const dataSave = {
+    reserva: idSchema,
     creditCard: creditCard,
     expireDate: expireDate,
     price: price,
@@ -25,6 +34,7 @@ routes.post("/api/compras-tickets", async (req, res) => {
   };
 
   let message = {
+    id: '',
     error: '', 
     json: ''
   };
