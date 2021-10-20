@@ -1,23 +1,43 @@
-const express = require('express');
-const morgan = require('morgan');
-const app = express();
-const path = require('path');
-const DB =  require('./database/database_connection');
-const PORT = require('./database/utils/properties').PORT;
-DB();
+// Importar  paquetes
+const express= require("express")
+const morgan= require("morgan")
+const mongoose=require("mongoose")
+const path=require("path")
+//importando routes
+const Routes=require("./routes/disponibilidades/index")
+const { dirname } = require("path")
+
+
+//conexion a la base de datos
+
+mongoose.connect("mongodb://localhost/personas").then(db=>{
+    console.log("Base de datos conectada")
+}).catch(err=>console.error(err))
+
+
+const app= express()
 
 //Settings
-app.set('port', PORT)
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
 
-//Middlewares
-app.use(morgan('dev'));
-app.use(express.urlencoded({extended: false}));
+app.set("port",process.env.PORT||3000)
+app.set("views",path.join(__dirname,"views"))
+app.set("view engine","ejs")
 
-//TODO: Implementar cada uno los middleware de sus routes aquí
 
-//RUN Server
-app.listen(app.get('port'), () => {
-    console.log(`Server in runnig on port ${app.get('port')}`);
+//middlewares
+app.use(morgan("dev"))
+app.use(express.urlencoded({extended:false}))
+app.use(express.static(__dirname+ "/public"))
+
+//Routes
+app.use("/",Routes)
+
+
+// ejecutar servidor
+
+app.listen(app.get("port"),()=>{
+    console.log("Sevidor On en el puerto"+app.get("port"))
 })
+
+
+
