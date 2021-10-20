@@ -6,6 +6,7 @@ const DB =  require('./database/database_connection');
 const PORT = require('./database/utils/properties').PORT;
 const _comprasRoutes = require('./routes/compras/compras.routes');
 const _reservasRoutes = require('./routes/reservas/reservas.routes');
+const _disponibilidadesRoutes = require("./routes/disponibilidades/index");
 DB();
 
 //Settings
@@ -16,10 +17,10 @@ app.set('view engine', 'ejs');
 //Middlewares
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended: false}));
+app.use(express.static(__dirname + "/public"))
 app.use('/', _comprasRoutes);
 app.use('/', _reservasRoutes);
-app.use(express.static('public'));
-//TODO: Implementar cada uno los middleware de sus routes aquí
+app.use('/', _disponibilidadesRoutes);
 
 //RUN Server
 app.listen(app.get('port'), () => {

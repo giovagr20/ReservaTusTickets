@@ -2,6 +2,7 @@ const express = require("express");
 const routes = express.Router();
 const _compraSchema = require("./compras.model");
 const _reservaSchema = require('../reservas/reservas.model');
+const Swal = require('sweetalert2');
 let idSchema = undefined;
 
 routes.get("/", (req, res) => {
@@ -17,13 +18,19 @@ routes.get("/compras-tickets", (req, res) => {
   res.render("compras/compras-tickets", { message });
 });
 
-routes.get('/compras-tickets/:id', (req, res) => {
-  idSchema = _reservaSchema.findById(req.params.id);
-  res.render('compras/compras-tickets', {idSchema})
+routes.get('/compras-tickets/:id', async (req, res) => {
+  idSchema = undefined;
+  idSchema = await _reservaSchema.findById(req.params.id);
+  let message = {
+    id: idSchema,
+    error: '',
+    json: ''
+  };
+  console.log(message);
+  res.render('compras/compras-tickets', {message})
 });
 
 routes.post("/api/compras-tickets", async (req, res) => {
-
   const { creditCard, expireDate, price, quantity } = req.body;
   const dataSave = {
     reserva: idSchema,
@@ -34,14 +41,13 @@ routes.post("/api/compras-tickets", async (req, res) => {
   };
 
   let message = {
-    id: '',
+    id: idSchema,
     error: '', 
     json: ''
   };
   if (!creditCard || !expireDate || !price || !quantity) {
     message.error = 'Ha ocurrido un error';
-    console.log(message.error);
-    res.render("compras/compras-tickets", { message });
+    await res.render("compras/compras-tickets", { message });
   }
 
   const compra = new _compraSchema(dataSave);
