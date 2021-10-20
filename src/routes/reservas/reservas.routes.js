@@ -21,4 +21,12 @@ routes.post("/reserva-tickets", async(req,res)=>{
     res.redirect("/reservas-tickets")
 })
 
+routes.get("/ver-reservas-activas", async(req,res)=>{
+    const reservas = await _reservaSchema.find()
+    let message = {
+        error: '',
+        json: ''
+    };
+    res.render("reservas/reservas-activas.ejs",{reservas})
+})
 module.exports = routes;
