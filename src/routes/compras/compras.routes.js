@@ -58,4 +58,14 @@ routes.post("/api/compras-tickets", async (req, res) => {
 
   await res.render('compras/compras-tickets', { message });
 });
+
+
+routes.get('/ver-mis-compras', async (req, res) => {
+  let compras = await _compraSchema.find().exec();
+
+  console.log(compras);
+
+  res.render('compras/ver-mis-compras', {compras});
+})
+
 module.exports = routes;

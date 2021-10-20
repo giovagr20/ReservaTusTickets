@@ -1,0 +1,27 @@
+<%- include('../header') -%>
+
+<div class="container row">
+  <div class="col-sm-8 mt-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Usuario</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Compra total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let compra of compras) { %>
+        <tr>
+          <td> <%= compra.reserva %> </td>
+          <td> <%= compra.quantity %>  </td>
+          <td> <%= compra.price %>  </td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('../footer') -%>
