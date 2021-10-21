@@ -1,0 +1,51 @@
+<%- include('../header') -%>
+
+<div class="container">
+    <div class="justify-content mt-6 text-center">
+        <div class="text-center mt-6">
+            <p class="display-6"><strong>Realiza tu reserva </strong>!</p>
+        </div>
+    <hr />
+    <form action="/reserva-tickets" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="text" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" id="user" name="user"/>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">fecha</span>
+                    <input type="date" id="date" name="date" class="form-control">
+                </div>
+                    
+            </div>
+            <div class="col-md-6">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">cantidad</span>
+                        <input type="number" class="form-control" id="quantity" name="quantity"/>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">ticket</span>
+                        <select class="form-select" id="ticket" name="ticket">
+                            <option value="ticket1">ticket1</option>
+                            <option value="ticket2">ticket2</option>
+                        </select>
+                </div>
+                
+            </div>
+        </div>
+        <div class="input-group mb-3" style="justify-content: center;">
+            <div>
+                <input type="submit" value="Reservar" class="btn btn-success" />
+            </div>
+        </div>
+    </form>
+    <div class="input-group mb-3" style="justify-content: center;">
+        <div>
+            <a href="/ver-reservas-activas" class="btn btn-success">Ver reservas activas</a>
+        </div>
+    </div>
+  </div>
+</div>
+
+<%- include('../footer') -%>
