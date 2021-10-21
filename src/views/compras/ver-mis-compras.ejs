@@ -1,7 +1,20 @@
 <%- include('../header') -%>
 
+
+<% if(compras.length <= 0) { %>
+  <div class="container row">
+    <div class="col-sm-10 mt-4">
+      <div class="alert alert-danger" role="alert">
+        <p class="lead text-center"> No existen compras </p>
+      </div>
+    </div>
+  <div class="col-sm-2 mt-4">
+    <a href="/" class="btn btn-warning btn-sm">Regresar</a>
+  </div>
+</div>
+<% } else { %>
 <div class="container row">
-  <div class="col-sm-8 mt-4">
+  <div class="col-sm-10 mt-4">
     <table class="table table-bordered">
       <thead>
         <tr>
@@ -14,7 +27,7 @@
       <tbody>
         <% for(let compra of compras) { %>
         <tr>
-          <td> <%= compra.reserva %> </td>
+          <td> <%= compra.reserva.user %> </td>
           <td> <%= compra.quantity %>  </td>
           <td> <%= compra.price %>  </td>
         </tr>
@@ -22,6 +35,9 @@
       </tbody>
     </table>
   </div>
+  <div class="col-sm-2">
+    <a href="/" class="btn btn-warning btn-sm mt-4">Regresar</a>
+  </div>
 </div>
-
+<% } %>
 <%- include('../footer') -%>
