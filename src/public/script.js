@@ -39,7 +39,7 @@ function showMovies(movies) {
         </div>
         `
         movieEl.addEventListener("click", (e)=>{
-            //console.log(movie)
+        
             let movieSelect
             movieSelect = movie
             console.log (movieSelect)
@@ -50,7 +50,6 @@ function showMovies(movies) {
     })
  
 }
-
 
 function getClassByRate(vote) {
     if(vote >= 8) {
