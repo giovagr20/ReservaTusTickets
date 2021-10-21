@@ -12,7 +12,7 @@ const search = document.getElementById('search')
 async function getMovies(url) {
     const res = await fetch(url)
     const data = await res.json()
-
+console.log(data)
     showMovies(data.results)
 }
 
@@ -22,10 +22,12 @@ function showMovies(movies) {
     movies.forEach((movie) => {
         const { title, poster_path, vote_average, overview } = movie
 
+        //console.log(movie)
         const movieEl = document.createElement('div')
         movieEl.classList.add('movie')
 
         movieEl.innerHTML = `
+
             <img src="${IMG_PATH + poster_path}" alt="${title}">
             <div class="movie-info">
           <h3>${title}</h3>
@@ -36,9 +38,19 @@ function showMovies(movies) {
           ${overview}
         </div>
         `
+        movieEl.addEventListener("click", (e)=>{
+            //console.log(movie)
+            let movieSelect
+            movieSelect = movie
+            console.log (movieSelect)
+        return movieSelect
+       })
         main.appendChild(movieEl)
+
     })
+ 
 }
+
 
 function getClassByRate(vote) {
     if(vote >= 8) {
@@ -50,7 +62,8 @@ function getClassByRate(vote) {
     }
 }
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('keypress', (e) => {
+   if (e.key==='Enter'){
     e.preventDefault()
 
     const searchTerm = search.value
@@ -61,5 +74,11 @@ form.addEventListener('submit', (e) => {
         search.value = ''
     } else {
         window.location.reload()
+    }}
+    else
+    {
+        console.log("No ingresó datos")
     }
+    
+    
 })

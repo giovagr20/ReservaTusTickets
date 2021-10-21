@@ -2,159 +2,154 @@
 
 <div class="container">
     <div class="row col4">
-        <div class="input-group  mb-3 mt-4">
-            <form id="form">
+        <div class="input-group  mb-2 mt-4">
+            <form id="form" action="agregarDisponibilidad/" method="POST">
                 <h5>Seleccione la película: </h5>
 
-              
                 <input type="text" id="search" class="search form-control" placeholder="Buscar">
-<BR>
-                <main id="main"></main>
-                <h5 class="mt-4" id="Estado disponiblidad">Disponibilidad (S/N): </h5>
-                <div class=id="disponible">
-                    <input type="radio" id="disponible_si" name="sidispo" value="sidispo" checked>
-                    <label for="Si">Si</label>
-                </div>
+                <BR>
+             <main id="main"></main>
 
-                <div>
-                    <input type="radio" id="disponible_no" name="nodispo" value="nodispo">
-                    <label for="No">NO</label>
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleSelect1" class="form-label mt-4">Sala de cine</label>
-                    <select class="form-select" id="exampleSelect1">
-                        <option>Monterrey</option>
-                        <option>Molinos</option>
-                        <option>Santa Fe</option>
-                        <option>Oviedo</option>
-                        <option>Las Américas</option>
-                        <option>Aves María</option>
-                        <option>Ciudad Fabricato</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleSelect1" class="form-label mt-4">Fecha de estreno</label>
-                    <span class="input-group-text" id="basic-addon1">fecha</span>
-                    <input type="date" id="date" name="date" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="exampleSelect1" class="form-label mt-4">Fecha final</label>
-                    <span class="input-group-text" id="basic-addon1">fecha</span>
-                    <input type="date" id="date" name="date" class="form-control">
-                </div>                    
-
-
-                <legend class="mt-4">Horarios</legend>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        7:00 A.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        8:00 A.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        9:00 A.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        10:00 A.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        11:00 A.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        12:00 M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        1:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        2:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        3:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        4:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        5:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        6:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        7:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        8:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        9:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        10:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        11:00 P.M.
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                    <label class="form-check-label" for="flexCheckDefault">
-                        12:00 P.M.
-                    </label>
-                </div>
-                <script src="./script.js"></script>
+             <h5 class="mt-2" id="disponibilidadEstado">Disponibilidad (S/N): </h5>
+             <div class=id="disponible">
+                 <input type="radio" id="estado" name="sidispo" value="sidispo" checked>
+                 <label for="Si">Si</label>
+                 <input type="radio" id="disponible_no" name="nodispo" value="nodispo">
+                 <label for="No">NO</label>
+             </div>
+             <div class="form-group">
+                <label for="exampleSelect1" class="form-label mt-4">Sala de cine</label>
+                <select class="form-select" id="sala">
+                    <option>Monterrey</option>
+                    <option>Molinos</option>
+                    <option>Santa Fe</option>
+                    <option>Oviedo</option>
+                    <option>Las Américas</option>
+                    <option>Aves María</option>
+                    <option>Ciudad Fabricato</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleSelect1" class="form-label mt-4">Fecha de estreno</label>
+                <span class="input-group-text" id="basic-addon1">fecha</span>
+                <input type="date" id="fechaEstreno" name="date" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleSelect1" class="form-label mt-4">Fecha final</label>
+                <span class="input-group-text" id="basic-addon1">fecha</span>
+                <input type="date" id="fechaFinal" name="date" class="form-control">
+            </div>                    
+            <legend class="mt-4">Horarios</legend>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    7:00 A.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    8:00 A.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    9:00 A.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    10:00 A.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    11:00 A.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    12:00 M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    1:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    2:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    3:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    4:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    5:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    6:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    7:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    8:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    9:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    10:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    11:00 P.M.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                    12:00 P.M.
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Agregar Disponibilidad</button>
+             <script src="./script.js"></script>
 
 
             </form>
@@ -162,61 +157,7 @@
 
 
 
-
-        <!-- FORMULARIO PARA INGRESAR ACTIVIDADES
-
-        <div class="col-md-4">
-            <div class="card">
-                <h1>Ingreso de actividades</h1>
-                <div class="card-body">
-                    <form action="/agregarActividad" method="POST">
-                        <div class="form-group">
-                            <input type="text" id="Titulo" name="Titulo"  placeholder="Ingrese el titulo de la actividad" class="form-control mb-4">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control mb-4" id="descripcion" name="descripcion" placeholder="Ingrese la descripcion de la actividad"  ></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block"> Agregar Actividad</button>
-                    </form>
-                </div>
-            </div>
-        </div> -->
-
-
-
-        <!-- TABLA DE ACTIVIDADES -->
-        <!-- 
-        <div class="col-md-8">
-            <table class="table table-bordered table-hover">
-            
-            <thead>
-                <tr>
-                    <th>Numero Identificacion</th>
-                    <th>Titulo</th>
-                    <th>Descripcion</th>
-                    <th>Metodos</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% for (var i=0;i<tareas.length;i++ ){  %> 
-                    <tr>
-                        <td><%= i+1 %> </td>
-                        <td><%= tareas[i].Titulo %> </td>
-                        <td><%=tareas[i].descripcion  %> </td>
-                        <td >
-                         <a href="/cambiarEstado/<%=tareas[i]._id %> " class="btn <%= tareas[i].estado ? 'btn-success' : 'btn-dark'%>  ">Realizado</a>
-                         <a href="/eliminar/<%=tareas[i]._id %>" class="btn btn-danger">Eliminar</a>
-                         <a href="/editar/<%=tareas[i]._id %>" class="btn btn-info">Editar</a>
-                        </td>
-                    </tr>
-                
-            <% } %> 
-               
-            </tbody>
-        </table>
         </div>
-
-    </div> -->
     </div>
 
 

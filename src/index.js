@@ -1,21 +1,30 @@
 // Importar  paquetes
 const express= require("express")
 const morgan= require("morgan")
-const mongoose=require("mongoose")
+const app= express()
+//const mongoose=require("mongoose")
 const path=require("path")
-//importando routes
+const DB=require('./database/database_connection')
+const PORT= require('./database/utils/properties').PORT
 const Routes=require("./routes/disponibilidades/index")
-const { dirname } = require("path")
+//const Dispo = require('./routes/disponibilidades/index')
+DB()
+
+
+
+//importando routes
+
+//const DB = require()
+//const { dirname } = require("path")
 
 
 //conexion a la base de datos
-
-mongoose.connect("mongodb://localhost/personas").then(db=>{
+/*
+mongoose.connect("mongodb://localhost/disponibilidades").then(db=>{
     console.log("Base de datos conectada")
 }).catch(err=>console.error(err))
+*/
 
-
-const app= express()
 
 //Settings
 
