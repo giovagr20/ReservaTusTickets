@@ -29,20 +29,20 @@ routes.post("/reserva-tickets/:id", async(req,res)=>{
     console.log("entra a la validacion")
     message.error = 'Ha ocurrido un error';
     await res.render("reservas/reservas-tickets.ejs", { message });
-  }
-
-  if(req.params.id != 'insert'){
-    const reserva = await _reservaSchema.findById(req.params.id)
-    reserva.user = nueva_reserva.user
-    reserva.date = nueva_reserva.date
-    reserva.quantity = nueva_reserva.quantity
-    reserva.ticket = nueva_reserva.ticket
-    await reserva.save()
   }else{
-    console.log("entra al else")
-    await nueva_reserva.save()
+    if(req.params.id != 'insert'){
+      const reserva = await _reservaSchema.findById(req.params.id)
+      reserva.user = nueva_reserva.user
+      reserva.date = nueva_reserva.date
+      reserva.quantity = nueva_reserva.quantity
+      reserva.ticket = nueva_reserva.ticket
+      await reserva.save()
+    }else{
+      console.log("entra al else")
+      await nueva_reserva.save()
+    }
+    await res.render("reservas/reservas-tickets.ejs", {message})
   }
-  await res.render("reservas/reservas-tickets.ejs", {message})
 })
 
 routes.get("/ver-reservas-activas", async(req,res)=>{
