@@ -6,23 +6,23 @@
             <p class="display-6"><strong>Realiza tu reserva </strong>!</p>
         </div>
     <hr />
-    <form action="/reserva-tickets" method="post">
+    <form action="/reserva-tickets/<%= message.json ? message.json._id : 'insert'  %>" method="post">
         <div class="row">
             <div class="col-md-6">
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">@</span>
-                        <input type="text" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" id="user" name="user"/>
+                        <input type="text" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="basic-addon1" id="user" name="user" value="<%= message.json ? message.json.user : '' %>"/>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1">fecha</span>
-                    <input type="date" id="date" name="date" class="form-control">
+                    <input type="date" id="date" name="date" class="form-control" value="<%= message.json ? message.json.date.toLocaleDateString('en-CA') : '' %>">
                 </div>
                     
             </div>
             <div class="col-md-6">
                 <div class="input-group mb-3">
                     <span class="input-group-text">cantidad</span>
-                        <input type="number" class="form-control" id="quantity" name="quantity"/>
+                        <input type="number" class="form-control" id="quantity" name="quantity" value="<%= message.json ? message.json.quantity : '' %>"/>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text">ticket</span>
@@ -45,7 +45,18 @@
             <a href="/ver-reservas-activas" class="btn btn-success">Ver reservas activas</a>
         </div>
     </div>
+
+    <% if(message.error.length > 0) { %> 
+        <div class="alert alert-danger" role="alert">
+          <p class="lead text-center"> Por favor ingresa todos los datos! </p>
+        </div>
+      <% } %>
   </div>
 </div>
+<script>
 
+    var ticket="<%= message.json ? message.json.ticket : '' %>"
+    let select = document.getElementById("ticket");
+    select.value = ticket;
+</script>
 <%- include('../footer') -%>

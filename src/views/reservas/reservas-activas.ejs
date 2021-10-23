@@ -3,7 +3,7 @@
 <div class="container">
     <div class="justify-content mt-6 text-center">
         <div class="text-center mt-6">
-            <p class="display-6"><strong>Rservas activas </strong></p>
+            <p class="display-6"><strong>Reservas activas </strong></p>
         </div>
         <hr />
         <div class="col-md-12">
@@ -22,7 +22,7 @@
                         <td><%= reservas[i].user %></td>
                         <td><%= reservas[i].ticket %></td>
                         <td><%= reservas[i].quantity %></td>
-                        <td><%= reservas[i].date %></td>
+                        <td><%= reservas[i].date.toLocaleDateString('en-CA') %></td>
                         <td>
                             <a href="/compras-tickets/<%= reservas[i]._id %> " class="btn btn-success">Comprar</a>
                             <a href="/eliminar/<%= reservas[i]._id %>" class="btn btn-danger">Eliminar</a>
