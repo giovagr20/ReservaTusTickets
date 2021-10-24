@@ -2,13 +2,18 @@
 
 :root {
   --primary-color: #22254b;
-  --secondary-color: #373b69;
+  --secondary-color: #3460f1;
 }
 
 * {
   box-sizing: border-box;
 }
 
+body {
+  
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
 
 header {
   padding: 1rem;
@@ -53,7 +58,7 @@ main {
 }
 
 .movie img {
-  width: 70%;
+  width: 100%;
 }
 
 .movie-info {
