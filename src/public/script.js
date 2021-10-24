@@ -6,6 +6,7 @@ const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
 
+let movieSearch = undefined;
 // Get initial movies
 //getMovies(API_URL)
 
@@ -64,15 +65,15 @@ function getClassByRate(vote) {
     }
 }
 
+let searchTerm 
 form.addEventListener('keypress', (e) => {
    if (e.key==='Enter'){
     e.preventDefault()
-
-    const searchTerm = search.value
+    searchTerm += search.value
+    movieSearch = searchTerm
 
     if(searchTerm && searchTerm !== '') {
         getMovies(SEARCH_API + searchTerm)
-
         search.value = ''
     } else {
         window.location.reload()
