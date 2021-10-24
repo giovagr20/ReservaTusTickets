@@ -11,9 +11,8 @@ const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c
 router.get("/", (req, res) => {
     res.render("index");
   });
-
   router.post("/agregarDisponibilidad", async(req,res)=>{
-
+    X
     console.log(req.body);
 
     const dispo = new Dispo(req.body)

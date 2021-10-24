@@ -10,9 +10,10 @@ let movieSearch = undefined;
 // Get initial movies
 //getMovies(API_URL)
 
+let data = undefined;
 async function getMovies(url) {
     const res = await fetch(url)
-    const data = await res.json()
+     data = await res.json()
 console.log(data)
     showMovies(data.results)
 }
@@ -62,12 +63,12 @@ function getClassByRate(vote) {
     }
 }
 
-let searchTerm 
+var searchTerm = undefined;
 form.addEventListener('keypress', (e) => {
    if (e.key==='Enter'){
     e.preventDefault()
-    searchTerm += search.value
-    movieSearch = searchTerm
+    searchTerm = search.value;
+    movieSearch += searchTerm;
 
     if(searchTerm && searchTerm !== '') {
         getMovies(SEARCH_API + searchTerm)
