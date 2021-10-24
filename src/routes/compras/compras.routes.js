@@ -48,15 +48,15 @@ routes.post("/api/compras-tickets", async (req, res) => {
   if (!creditCard || !expireDate || !price || !quantity) {
     message.error = 'Ha ocurrido un error';
     await res.render("compras/compras-tickets", { message });
+  } else {
+    const compra = new _compraSchema(dataSave);
+
+    await compra.save();
+  
+    message.json = JSON.stringify(compra);
+  
+    await res.render('compras/compras-tickets', { message });
   }
-
-  const compra = new _compraSchema(dataSave);
-
-  await compra.save();
-
-  message.json = JSON.stringify(compra);
-
-  await res.render('compras/compras-tickets', { message });
 });
 
 
