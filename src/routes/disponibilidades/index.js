@@ -12,7 +12,6 @@ router.get("/", (req, res) => {
     res.render("index");
   });
   router.post("/agregarDisponibilidad", async(req,res)=>{
-    X
     console.log(req.body);
 
     const dispo = new Dispo(req.body)

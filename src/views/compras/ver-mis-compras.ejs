@@ -27,7 +27,7 @@
       <tbody>
         <% for(let compra of compras) { %>
         <tr>
-          <td> <%= compra.reserva.user %> </td>
+          <td> <%= compra.reserva %> </td>
           <td> <%= compra.quantity %>  </td>
           <td> <%= compra.price %>  </td>
         </tr>
@@ -36,8 +36,9 @@
     </table>
   </div>
   <div class="col-sm-2">
-    <a href="/" class="btn btn-warning btn-sm mt-4">Regresar</a>
+    <a href="reservas-tickets" class="btn btn-warning btn-sm mt-4">Regresar</a>
   </div>
 </div>
+<link rel="stylesheet" href="style.css">
 <% } %>
 <%- include('../footer') -%>
